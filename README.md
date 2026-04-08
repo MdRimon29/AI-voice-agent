@@ -5,33 +5,19 @@ LiveKit + OpenAI + ElevenLabs + Silero VAD
 
 ## Overview
 
-This project implements a low-latency, real-time voice agent using a modular pipeline architecture built on top of LiveKit Agents. It integrates speech recognition, language modeling, and speech synthesis into a unified streaming system, while exposing fine-grained performance metrics across each stage.
+**AI Voice Agent** is a **real-time, low-latency voice assistant** built on **LiveKit Agents**.  
+It integrates **OpenAI Whisper (STT)**, **GPT-4o-mini (LLM)**, **ElevenLabs TTS**, and **Silero VAD** to enable **streaming voice interactions** with continuous audio input and asynchronous processing.
 
-The system is designed for production-oriented experimentation, enabling benchmarking of latency, throughput, and responsiveness across STT, LLM, and TTS components.
+The system is designed for **production-ready experimentation**, allowing you to monitor detailed **performance metrics** for each stage of the pipeline without blocking the conversation flow.  
 
----
+**Key Real-Time Features:**
+- **Streaming audio input** with voice activity detection (VAD)
+- **Async processing pipeline** for STT → LLM → TTS
+- **Low-latency LLM inference** using GPT-4o-mini
+- **Real-time metrics collection** without delaying responses
+- **LiveKit integration** for low-latency audio streaming in rooms
 
-## Architecture
-
-Audio Input  
-→ Voice Activity Detection (Silero VAD)  
-→ Speech-to-Text (OpenAI Whisper)  
-→ LLM Inference (OpenAI GPT)  
-→ Text-to-Speech (ElevenLabs)  
-→ Audio Output  
-
-Each component emits asynchronous metrics without blocking the real-time pipeline.
-
----
-
-## Key Features
-
-- Real-time voice interaction
-- Streaming-first architecture
-- Event-driven metrics collection
-- Async execution model
-- Modular and extensible design
-- Pluggable models and providers
+This architecture ensures **responsive, conversational voice interactions** suitable for AI assistants, customer support, and other real-time applications.
 
 ---
 
