@@ -84,32 +84,42 @@ The system captures detailed runtime metrics:
 
 ## Environment Configuration
 
-Create a `.env` file:
+## Environment Configuration
 
-OPENAI_API_KEY=your_openai_api_key  
-ELEVEN_API_KEY=your_elevenlabs_api_key  
+Create a `.env` file by copying the provided template:
 
-LIVEKIT_URL=your_livekit_url  
-LIVEKIT_API_KEY=your_livekit_api_key  
-LIVEKIT_API_SECRET=your_livekit_api_secret  
-LIVEKIT_TOKEN=your_livekit_token  
-
-Notes:
-- Do not wrap values in quotes unless necessary
-- Restart the application after updating `.env`
+```bash
+cp example.env .env
+```
+Then update the values with your actual credentials.
 
 ---
 
 ## Installation
 
-git clone <repository_url>  
-cd <project_directory>  
+## Installation
 
-python -m venv venv  
-source venv/bin/activate        # Linux/Mac  
-venv\Scripts\activate           # Windows  
+```bash
+# Clone the repository
+git clone <repository_url>
 
-pip install -r requirements.txt  
+# Move into project directory
+cd <project_directory>
+
+# Create virtual environment using uv
+uv venv
+
+# Activate virtual environment
+
+# Linux / Mac
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+
+# Install dependencies
+uv pip install -r requirements.txt
+```
 
 ---
 
