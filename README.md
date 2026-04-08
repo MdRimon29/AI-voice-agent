@@ -113,7 +113,9 @@ uv pip install -r requirements.txt
 
 ## Run the Agent
 
+```bash
 python main.py dev  
+```
 
 This will:
 - Start a LiveKit worker
@@ -181,26 +183,6 @@ Agent not responding:
 .env not loading:
 - Ensure file is saved
 - Restart application
-
----
-
-## Production Considerations
-
-- Replace console logs with structured logging
-- Integrate Prometheus or OpenTelemetry
-- Add retry and fault tolerance for APIs
-- Use secure secret management
-- Containerize with Docker
-
----
-
-## Future Improvements
-
-- Streaming partial LLM responses
-- Multi-agent orchestration
-- Memory and context persistence
-- Speaker diarization
-- Edge deployment support
 
 ---
 
