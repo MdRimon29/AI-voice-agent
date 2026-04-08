@@ -1,5 +1,6 @@
-# AI Voice Agent with Real-Time Metrics  
-LiveKit + OpenAI + ElevenLabs + Silero VAD
+# AI Voice Agent
+
+**Real-time AI voice assistant with OpenAI GPT & Whisper, ElevenLabs TTS, Silero VAD, and async metrics.**
 
 ---
 
