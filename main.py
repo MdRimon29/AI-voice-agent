@@ -1,8 +1,4 @@
 import logging
-from livekit.agents import jupyter
-
-import sounddevice as sd
-sd.default.device = (1, 3)
 
 from dotenv import load_dotenv
 _ = load_dotenv(override=True)
@@ -21,16 +17,14 @@ from livekit.plugins import (
 from livekit.agents.metrics import LLMMetrics, STTMetrics, TTSMetrics, EOUMetrics
 import asyncio
 
+
 class MetricsAgent(Agent):
     def __init__(self) -> None:
-        llm = openai.LLM(model="gpt-4o")
-        #llm = openai.LLM(model="gpt-4o-mini")   # Example with lower latency
+        #llm = openai.LLM(model="gpt-4o")
+        llm = openai.LLM(model="gpt-4o-mini")   # Example with lower latency
         stt = openai.STT(model="whisper-1")
         tts = elevenlabs.TTS()
-        silero_vad = silero.VAD.load(input_device_index=1)
-
-        # <-- Minimal addition: force STT to use your mic index
-        stt.audio_device_index = 1
+        silero_vad = silero.VAD.load()
         
         super().__init__(
             instructions="You are a helpful assistant communicating via voice",
@@ -91,15 +85,10 @@ async def entrypoint(ctx: JobContext):
 
     session = AgentSession()
 
-    # Force a default room name if none provided
-    room_name = getattr(ctx, "room", "test-room")
-
     await session.start(
         agent=MetricsAgent(),
-        room=room_name   #ctx.room,
+        room=ctx.room,
     )
-
-    await jupyter.run(session)
 
 
 if __name__ == "__main__":
