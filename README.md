@@ -73,13 +73,14 @@ The system captures detailed runtime metrics:
 ---
 
 ## Project Structure
-
-.
-├── main.py              # Agent implementation
-├── example.env          # Environment template
-├── .env                 # Local configuration
+<pre>
+.  
+├── main.py              # Agent implementation  
+├── example.env          # Environment template  
+├── .env                 # Local configuration  
+├── requirements.txt     # All necessary requirements 
 └── README.md
-
+</pre>
 ---
 
 ## Environment Configuration
